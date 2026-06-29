@@ -70,11 +70,14 @@ class ExternalControlActivity : Activity(), CoroutineScope by MainScope() {
                 Toast.makeText(this, R.string.external_control_started, Toast.LENGTH_LONG).show()
             }
 
-            Intents.ACTION_STOP_CLASH -> if(Remote.broadcasts.clashRunning) {
+//            Intents.ACTION_STOP_CLASH -> if(Remote.broadcasts.clashRunning) {
+//                stopClash()
+//            }
+//            else {
+//                Toast.makeText(this, R.string.external_control_stopped, Toast.LENGTH_LONG).show()
+//            }
+            Intents.ACTION_STOP_CLASH -> {
                 stopClash()
-            }
-            else {
-                Toast.makeText(this, R.string.external_control_stopped, Toast.LENGTH_LONG).show()
             }
         }
         return finish()
